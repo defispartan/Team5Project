@@ -1,0 +1,36 @@
+#!/bin/bash --login
+########## SBATCH Lines for Resource Request ##########
+ 
+#SBATCH --time=8:00:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --nodes=1-4                 # number of different nodes - could be an exact number or a range of nodes (same as -N)
+#SBATCH -c 8           # number of CPUs (or cores) per task (same as -c)
+#SBATCH --gres=gpu:v100:8
+#SBATCH --mem=32G            # memory required per allocated CPU (or core) - amount of memory (in bytes)
+#SBATCH --job-name=da_copa # you can give your job a name for easier identification (same as -J)
+#SBATCH --mail-type=BEGIN,END,FAIL
+
+#!/bin/bash
+prefix="bigbird-da-copa"
+gpu=8
+echo "export CUDA_VISIBLE_DEVICES=${gpu}"
+export CUDA_VISIBLE_DEVICES=${gpu}
+tstr=$(date +"%FT%H%M")
+
+train_datasets="copa"
+test_datasets="copa"
+pw_tasks="copa"
+MODEL_ROOT="checkpoints"
+BERT_PATH="../mt_dnn_models/mt_dnn_large.pt"
+DATA_DIR="../data/mt_dnn"
+
+BATCH_SIZE=1
+EPOCHS=14
+lr="3e-5"
+answer_opt=0
+optim="adamax"
+grad_clipping=0
+global_grad_clipping=1
+
+model_dir="checkpoints/${prefix}_${optim}_answer_opt${answer_opt}_gc${grad_clipping}_ggc${global_grad_clipping}_${tstr}"
+log_file="${model_dir}/bigbird_da_copa.log"
+/mnt/home/storkssh/anaconda2/envs/bigbirdPy/bin/python ../train.py --data_dir ${DATA_DIR} --init_checkpoint ${BERT_PATH} --epochs ${EPOCHS} --batch_size ${BATCH_SIZE} --output_dir ${model_dir} --log_file ${log_file} --answer_opt ${answer_opt} --optimizer ${optim} --train_datasets ${train_datasets} --test_datasets ${test_datasets} --pw_tasks ${pw_tasks} --grad_clipping ${grad_clipping} --global_grad_clipping ${global_grad_clipping} --learning_rate ${lr} --multi_gpu_on
