@@ -1,0 +1,18 @@
+Winograd Dev (Rahman and Ng):
+Class 0: 595/1190 = 0.5
+Class 1: 595/1190 = 0.5
+Winograd Test 1 (Rahman and Ng):
+Class 0: 282/564 = 0.5
+Class 1: 282/564 = 0.5
+Winograd Test 2 (Original Test Data):
+Class 0: 143/285 = 0.5017543859649123
+Class 1: 142/285 = 0.4982456140350877
+
+COPA dev:
+Class 0: 29/50 = 0.58
+Class 1: 21/50 = 0.42
+COPA test:
+Class 0: 250/500 = 0.5
+Class 1: 250/500 = 0.5
+
+NOTE: Dev sets were generated from 10% of training set.
