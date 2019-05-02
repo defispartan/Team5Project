@@ -22,7 +22,7 @@ After installing dependencies found in requirements.txt, the following commands 
 
 Our results and model predictions are provided in the BigBird/Results directory, and the examples we used for error analysis are in the [BigBird/error_analysis](BigBird/error_analysis) directory.
 
-After installing the model as documented in the MT-DNN repository, replace the following files with the identically named files in the BigBird directory of our repository:
+After installing the model as documented in the MT-DNN repository, replace the following files with the identically named files in the [BigBird](BigBird) directory of our repository:
 * data_utils/[glue_utils.py](BigBird/glue_utils.py) (data loading code modified for Winograd and COPA)
 * data_utils/[label_map.py](BigBird/label_map.py) (modifed to provide some task-specific options for Winograd and COPA)
 * [prepro.py](BigBird/prepro.py) (data preprocessing code modified for Winograd and COPA)
