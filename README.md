@@ -20,8 +20,7 @@ After installing dependencies found in requirements.txt, the following commands 
   
 **BigBird (MT-DNN)** Original codebase: https://github.com/namisan/mt-dnn
 
-Our results and model predictions are provided in the BigBird/Results directory.
-
+Our results and model predictions are provided in the BigBird/Results directory, and the examples we used for error analysis are in the BigBird/error_analysis directory.
 
 After installing the model as documented in the MT-DNN repository, replace the following files with the identically named files in the BigBird directory of our repository:
 * data_utils/glue_utils.py (data loading code modified for Winograd and COPA)
