@@ -52,11 +52,14 @@ python error_analysis/error_analysis_winograd.py
 ```
 python error_analysis/error_analysis_copa.py
 ```
-**GPT** Original codebase:https://github.com/openai/finetune-transformer-lm 
+**GPT** 
+
+Original codebase:https://github.com/openai/finetune-transformer-lm
+
 Check for the correct instance of python in following files.
 GPT/COPA/gpt_copa.sb
 GPT/Winograd/gpt_winograd.sb
-These files will be used to run the training at hpcc.
+These files will be used to build model using hpcc.
 
 **GPT Experiment for COPA**
 To experiment with COPA, use the training and testing data in [GPT/COPA/data].
