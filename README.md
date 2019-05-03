@@ -9,13 +9,15 @@ After installing dependencies found in requirements.txt, the following commands 
 
   python scripts/inference_babi_task.py <model>
   
-    Model Options: biadnc-all, biadnc-aug16-all, and cse842
+    Model Options: biadnc-all, biadnc-aug16-all
     
-    Note: cse842 model was trained using configuration described in project report
+    Note: cse842 model was trained using the best configuration described in project report
+    
   
   python scripts/start_training.py
   
     Configuration can be altered in scripts/config.yml
+    
   
   
 **BigBird (MT-DNN)** Original codebase: https://github.com/namisan/mt-dnn
