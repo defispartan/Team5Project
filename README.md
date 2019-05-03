@@ -52,4 +52,4 @@ python error_analysis/error_analysis_winograd.py
 ```
 python error_analysis/error_analysis_copa.py
 ```
-*GPT** Original codebase:https://github.com/openai/finetune-transformer-lm
+**GPT** Original codebase:https://github.com/openai/finetune-transformer-lm
