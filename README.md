@@ -52,4 +52,13 @@ python error_analysis/error_analysis_winograd.py
 ```
 python error_analysis/error_analysis_copa.py
 ```
-**GPT** Original codebase:https://github.com/openai/finetune-transformer-lm
+**GPT** Original codebase:https://github.com/openai/finetune-transformer-lm 
+Check for 
+
+**COPA** 
+To experiment with COPA we need use the training data in [GPT/COPA/data].
+Update the train.py with the hyperparameter such as batch size, learning rate.
+
+
+**Winograd**
+
