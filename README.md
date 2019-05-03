@@ -54,16 +54,16 @@ python error_analysis/error_analysis_copa.py
 ```
 **GPT** 
 
-Original codebase:https://github.com/openai/finetune-transformer-lm
+Original codebase: https://github.com/openai/finetune-transformer-lm
 
 Check for the correct instance of python in following files.
 GPT/COPA/gpt_copa.sb
 GPT/Winograd/gpt_winograd.sb
-These files will be used to build model using hpcc.
+These files will be used to build model using HPCC.
 
 **GPT Experiment for COPA**
-To experiment with COPA, use the training and testing data in [GPT/COPA/data].
-Replace the datasets.py with [GPT/COPA/datasets.py] and use the correct directory path for training and test file.
+To experiment with COPA, use the training and testing data in [GPT/COPA/data](GPT/COPA/data).
+Replace the datasets.py with [GPT/COPA/datasets.py](GPT/COPA/datasets.py) and use the correct directory path for training and test file.
 Update the test file path in analysis.py file
 Update the train.py with the hyperparameter such as number of epochs, batch size, learning rate.
 ```
@@ -76,8 +76,8 @@ Submit both files as batch jobs to the HPCC. This can be done using the command:
 sbatch gpt_copa.sb
 ```
 **GPT Experiment for Winograd**
-To experiment with COPA we need use the training and testing data in [GPT/Winograd/data].
-Update the test file path in analysis.py file
+To experiment with Winograd we need use the training and testing data in [GPT/Winograd/data](GPT/Winograd/data). Replace the datasets.py with [GPT/Winograd/datasets.py](GPT/Winograd/datasets.py) and use the correct directory path for training and test file.
+Update the test file path in analysis.py file.
 Update the train.py with the hyperparameter such as number of epochs, batch size, learning rate.
 ```
     parser.add_argument('--n_iter', type=int, default=5)
