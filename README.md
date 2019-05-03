@@ -58,21 +58,35 @@ GPT/COPA/gpt_copa.sb
 GPT/Winograd/gpt_winograd.sb
 These files will be used to run the training at hpcc.
 
-1.**COPA**
-To experiment with COPA we need use the training and testing data in [GPT/COPA/data].
-Replace the Dataset.py with [GPT/COPA/datasets.py] and use the correct directory path for training and test file.
+**GPT Experiment for COPA**
+To experiment with COPA, use the training and testing data in [GPT/COPA/data].
+Replace the datasets.py with [GPT/COPA/datasets.py] and use the correct directory path for training and test file.
 Update the test file path in analysis.py file
-Update the train.py with the hyperparameter such as batch size, learning rate.
+Update the train.py with the hyperparameter such as number of epochs, batch size, learning rate.
+```
+    parser.add_argument('--n_iter', type=int, default=10)
+    parser.add_argument('--n_batch', type=int, default=2)
+    parser.add_argument('--lr', type=float, default=6.25e-5)
+```
 Submit both files as batch jobs to the HPCC. This can be done using the command:
 ```
 sbatch gpt_copa.sb
 ```
-2.**Winograd**
+**GPT Experiment for Winograd**
 To experiment with COPA we need use the training and testing data in [GPT/Winograd/data].
-Submit both files as batch jobs to the HPCC. This can be done using the command:
+Update the test file path in analysis.py file
+Update the train.py with the hyperparameter such as number of epochs, batch size, learning rate.
+```
+    parser.add_argument('--n_iter', type=int, default=5)
+    parser.add_argument('--n_batch', type=int, default=4)
+    parser.add_argument('--lr', type=float, default=1e-4)
+```
+Submit both files as batch jobs to the HPCC. This can be done using the command.
+
 ```
 sbatch gpt_winograd.sb
 ```
-Update the test file path in analysis.py file
-Update the train.py with the hyperparameter such as batch size, learning rate.
-Submit both files as batch jobs to the HPCC. This can be done using the command:
+
+
+A job_id will be generated and a log file in the name of "slurm-job_id.out" will be generated in the same working directory.
+
