@@ -7,9 +7,8 @@ Original codebase: https://github.com/JoergFranke/ADNC
 
 After installing dependencies found in requirements.txt, the following commands can be called:
 
-  python scripts/inference_babi_task.py <model>
-  
-    Model Options: biadnc-all, biadnc-aug16-all
+  python scripts/inference_babi_task.py biadnc-all
+ 
     
     Note: cse842 model was trained using the best configuration described in project report
     
